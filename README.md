@@ -11,5 +11,5 @@ Este repositório contém estudos e exemplos sobre a linguagem de progração go
 ### Resumindo
 > Go é uma linguagem de programação criada pela Google. É uma linguagem compilada e focada em produtividade e programação concorrente.
 
-- [Instalando](instalando.md)
+- [Instalando](Instalando/README.md)
 - [Configurando](configurando.md)
