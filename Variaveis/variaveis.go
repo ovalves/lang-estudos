@@ -29,4 +29,22 @@ func main() {
 	fmt.Println("A idade é", reflect.TypeOf(idade))
 	fmt.Println("A temperatura é", reflect.TypeOf(temp))
 	fmt.Println("O byte é", reflect.TypeOf(b))
+
+	// inferência de tipo
+	i := 5 // Criando a variável i
+	i += 5 // i = i + 3
+	i -= 6 // i = i - 3
+	i /= 3 // i = i / 2
+	i *= 3 // i = i * 2
+	i %= 3 // i = i % 2
+
+	fmt.Println(i)
+
+	// Atribuição de variáveis de uma só vez
+	x, y := 1, 2
+	fmt.Println(x, y)
+
+	// Troca de valores das variáveis
+	x, y = y, x
+	fmt.Println(x, y)
 }
