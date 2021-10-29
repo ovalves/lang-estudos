@@ -9,5 +9,6 @@ import "fmt"
 
 // A porta de entrada de um programa Go é a função main
 func main() {
-	fmt.Printf("Olá Mundo!\r\n")
+	fmt.Println("Olá Mundo!")
+	fmt.Printf("Olá %s!\r\n", "Bob")
 }
