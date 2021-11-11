@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	m "math"
 )
 
 func main() {
@@ -47,4 +48,29 @@ func main() {
 	// Troca de valores das variáveis
 	x, y = y, x
 	fmt.Println(x, y)
+
+	const PI float64 = 3.1415
+	var raio = 3.2 // tipo (float64) inferido pelo compilador
+
+	// forma reduzida de criar uma var
+	area := PI * m.Pow(raio, 2)
+	fmt.Println("A área da circunferência é", area)
+
+	const (
+		c1 = 1
+		c2 = 2
+	)
+
+	var (
+		c3 = 3
+		c4 = 4
+	)
+
+	fmt.Println(c1, c2, c3, c4)
+
+	var e, f bool = true, false
+	fmt.Println(e, f)
+
+	x1, y1, z1 := 2, false, "epa!"
+	fmt.Println(x1, y1, z1)
 }
