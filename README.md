@@ -43,3 +43,71 @@ Internamente, `bufio.Scanner`, `ioutil.ReadFile` e `ioutil.WriteFile` usam os m�
 Uma declaração `const` nomeia constantes, ou seja, valores determinados em tempo de compilação.
 
 Assim como as declarações `var`, as declarações `const` podem estar no nível de pacote (portanto os nomes são visíveis em todo o pacote) ou em uma função (os nomes são visíveis somente dentro dessa função). O valor de uma constante deve ser um `número`, uma `string` ou um `booleano`.
+
+
+## Tipos nomeados:
+
+Uma declaração type permite dar um nome a um tipo existente. Como tipos referentes a estruturas muitas vezes são longos, quase sempre eles são nomeados. Um exemplo familiar é a definição de um tipo Point para um sistema gráfico 2D:
+
+```go
+type Point struct {
+    X, Y int
+}
+
+var p Point
+```
+
+## Ponteiros
+
+Go oferece ponteiros, isto é, valores que contêm o endereço de uma variável. Em algumas linguagens, notadamente em C, ponteiros são relativamente irrestritos. Em outras linguagens, ponteiros são disfarçados como ‘‘referências’’ e não há muito que se possa fazer com eles a não ser passá-los de um lado para o outro. Go assume uma posição, de certo modo, intermediária. Os ponteiros são explicitamente visíveis. O operador & fornece o endereço de uma variável, e o operador * recupera a variável à qual o ponteiro se refere, mas não há aritmética com ponteiros.
+
+## Métodos e interfaces
+
+Um método é uma função associada a um tipo nomeado; Go é incomum no sentido em que métodos podem ser associados a quase todo tipo nomeado. Os métodos serão discutidos no capítulo 6. As interfaces são tipos abstratos que nos permitem tratar tipos concretos diferentes da mesma maneira, com base nos métodos que eles têm, e não no modo como são representados ou implementados.
+
+## Pacotes
+
+Go vem com uma biblioteca-padrão extensa de pacotes úteis, e a comunidade Go vem criando e compartilhando muitos outros. Programação geralmente tem mais a ver com o uso de pacotes existentes que com a escrita de um código original por conta própria. Ao longo do livro destacaremos umas duas dúzias dos pacotes padrões mais importantes, mas há muitos outros que não teremos espaço para mencionar, e não podemos oferecer nada remotamente parecido com uma referência completa a qualquer pacote.
+
+## Comandos no Terminal
+```bash
+$ go
+$ go help get
+$ go version
+$ godoc -http=:6060
+$ go env
+$ go doc cmd/vet
+$ go vet comandos.go
+$ go build comandos.go
+$ ./comandos
+$ go run comandos.go
+# Mac/Linux
+$ ls ~/go/src/github.com
+# Windows
+$ dir ~/go/src/github.com
+$ go get -u github.com/go-sql-driver/mysql
+```
+
+## Constantes e Variáveis
+
+```go
+import (
+	"fmt"
+	m "math" // alias
+)
+
+const PI float64 = 3.1415
+var raio = 3.2 // tipo (float64) inferido pelo compilador
+
+// forma reduzida de criar uma var
+area := PI * m.Pow(raio, 2)
+
+const (
+    a = 1
+    b = 2
+)
+
+var e, f bool = true, false
+
+g, h, i := 2, false, "epa!"
+```
