@@ -15,11 +15,11 @@ $ip = $_SERVER['SCRIPT_NAME'];
 | Concatenando variáveis
 |--------------------------------------------------------------------------
 */
-$concat = $name . " (" . $year . ") by " .$author . "\n";
+$concat = $name . " (" . $year . ") by " . $author . "\n";
 
 /*
 |--------------------------------------------------------------------------
 | Imprimindo os valores de uma variável
 |--------------------------------------------------------------------------
 */
-echo $concat;
+echo $concat; // PHP: Hypertext Preprocessor (1995) by Rasmus Lerdorf
