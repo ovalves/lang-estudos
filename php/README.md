@@ -65,7 +65,7 @@ php -S localhost:8000
   * [foreach](fundamentos/foreach)
   * [funcoes](fundamentos/funcoes)
   * [http](fundamentos/http)
-  * [if](fundamentos/if)
+  * [if](fundamentos/if/if.php)
   * [include](fundamentos/include)
   * [operadores](fundamentos/operadores)
   * [session](fundamentos/session)
