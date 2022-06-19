@@ -46,7 +46,13 @@ php -r 'echo "hi!\n";'
 ```
 
 ### multiple line comment
-````
+```
 /* comment line
 another line */
+```
+
+### webserver
+````
+/* comment line
+php -S localhost:8000
 ```
