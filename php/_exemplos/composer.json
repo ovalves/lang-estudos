@@ -1,0 +1,21 @@
+{
+    "name": "ovalves/lang-estudos-php",
+    "type": "project",
+    "description": "",
+    "license": "MIT",
+    "authors": [{
+        "name": "Vinicius Oliveira",
+        "email": "vinicius_o.a@live.com"
+    }],
+    "keywords": [],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Exemplos\\": "src/Exemplos"
+        }
+    },
+    "minimum-stability": "dev"
+}
