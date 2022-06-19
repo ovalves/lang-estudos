@@ -61,8 +61,8 @@ php -S localhost:8000
 * **Fundamentos**
   * [constantes](fundamentos/constantes)
   * [data](fundamentos/data)
-  * [for](fundamentos/for)
-  * [foreach](fundamentos/foreach)
+  * [for](fundamentos/for/for.php)
+  * [foreach](fundamentos/foreach/foreach.php)
   * [funcoes](fundamentos/funcoes)
   * [http](fundamentos/http)
   * [if](fundamentos/if/if.php)
