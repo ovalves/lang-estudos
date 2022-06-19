@@ -70,7 +70,7 @@ php -S localhost:8000
   * [operadores](fundamentos/operadores)
   * [session](fundamentos/session)
   * [strings](fundamentos/strings)
-  * [switch](fundamentos/switch)
+  * [switch](fundamentos/switch/switch.php)
   * [variaveis](fundamentos/variaveis)
     * [Variáveis Globais](fundamentos/variaveis/global-vars.php)
     * [Concatenando Variáveis](fundamentos/variaveis/concat.php)
