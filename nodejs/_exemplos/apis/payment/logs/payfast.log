@@ -1,0 +1,15 @@
+{"level":"info","message":"::1 - - [18/Aug/2022:21:13:42 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:14:24 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"Recebida requisicao de teste na porta 3000."}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:14:47 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"Recebida requisicao de teste na porta 3000."}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:15:05 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"Recebida requisicao de teste na porta 3000."}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:16:15 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"Recebida requisicao de teste na porta 3000."}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:18:03 +0000] \"GET /pagamentos HTTP/1.1\" 200 3\n"}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:18:32 +0000] \"GET /pagamentos/1 HTTP/1.1\" 404 151\n"}
+{"level":"info","message":"consultando pagamento: "}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:18:40 +0000] \"GET /pagamentos/pagamento/1 HTTP/1.1\" 500 1862\n"}
+{"level":"info","message":"consultando pagamento: "}
+{"level":"info","message":"::1 - - [18/Aug/2022:21:23:01 +0000] \"GET /pagamentos/pagamento/1 HTTP/1.1\" 500 1862\n"}

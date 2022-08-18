@@ -38,7 +38,6 @@ npm install --save memcached
 O uso dessa lib também é bem simples. A primeira coisa a fazer é carregar o módulo no arquivo em que se deseja ter o cliente e, em seguida, instanciar um novo objeto da lib, que no seu retorno, entrega o cliente que foi criado:
 ```js
 const memcached = require('memcached');
-
 const client = new memcached(
     'localhost:11211',
     {
