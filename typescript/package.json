@@ -14,7 +14,7 @@
     "scripts": {
         "start": "concurrently \"npm run watch\" \"npm run server\"",
         "test": "npm run tsc -- --noEmit && jest",
-        "server": "lite-server --baseDir=dist",
+        "server": "lite-server --baseDir=_dist",
         "compile": "tsc",
         "watch": "tsc -w"
     }
