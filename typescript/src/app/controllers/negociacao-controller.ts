@@ -1,3 +1,4 @@
+import { logExecutionTime } from '../decorators/log-execution-time.js';
 import { DiasDaSemana } from '../enums/dias-da-semana.js';
 import { Negociacao } from '../models/negociacao.js';
 import { Negociacoes } from '../models/negociacoes.js';
@@ -21,6 +22,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
 
+    @logExecutionTime()
     public adiciona(): void {
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
@@ -47,6 +49,7 @@ export class NegociacaoController {
         );
     }
 
+    @logExecutionTime()
     private limparFormulario(): void {
         this.inputData.value = '';
         this.inputQuantidade.value = '';
@@ -54,6 +57,7 @@ export class NegociacaoController {
         this.inputData.focus();
     }
 
+    @logExecutionTime()
     private atualizaView(): void {
         this.negociacoesView.update(this.negociacoes);
         this.mensagemView.update('Negociação adicionada com sucesso');
