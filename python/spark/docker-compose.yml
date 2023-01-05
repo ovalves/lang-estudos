@@ -1,0 +1,89 @@
+version: '3'
+services:
+  spark:
+    image: docker.io/bitnami/spark:3
+    container_name: spark_master
+    hostname: spark_master
+    user: root
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./streaming:/home
+      - /opt/spark/conf/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
+      - /opt/spark/jars:/opt/bitnami/spark/ivy:z
+    working_dir: /home
+    command: sh ./entrypoint.sh
+    networks:
+      spark-streaming-dev:
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  zookeeper:
+    image: 'bitnami/zookeeper:latest'
+    container_name: zookeeper
+    hostname: zookeeper
+    ports:
+      - '2181:2181'
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      spark-streaming-dev:
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    hostname: kafka
+    ports:
+      - '9092:9092'
+      - "9094:9094"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_LISTENERS: INTERNAL://:9092,OUTSIDE://:9094
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,OUTSIDE://host.docker.internal:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,OUTSIDE:PLAINTEXT
+    depends_on:
+      - zookeeper
+    volumes:
+      - ./streaming:/home
+    networks:
+      spark-streaming-dev:
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+  kafka-topics-generator:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - kafka
+    command: >
+      bash -c
+        "sleep 5s &&
+        kafka-topics --create --topic=tweet_messages --if-not-exists --bootstrap-server=kafka:9092"
+
+  cassandra:
+    image: 'bitnami/cassandra:latest'
+    container_name: cassandra
+    hostname: cassandra
+    ports:
+      - '9042:9042'
+    volumes:
+      - ./streaming:/home
+    networks:
+      spark-streaming-dev:
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+networks:
+  spark-streaming-dev:
+    name: spark-streaming-dev-network
+    driver: bridge
