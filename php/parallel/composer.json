@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Sample\\Threads\\": "src/"
+        },
+        "files": []
+    },
+    "require": {
+        "ext-gd": "*",
+        "ext-parallel": "*"
+    }
+}
