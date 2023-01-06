@@ -17,8 +17,6 @@ services:
       - ./streaming:/home
       - /opt/spark/conf/spark-defaults.conf:/opt/bitnami/spark/conf/spark-defaults.conf
       - /opt/spark/jars:/opt/bitnami/spark/ivy:z
-    working_dir: /home
-    command: sh ./entrypoint.sh
     networks:
       spark-streaming-dev:
     extra_hosts:
