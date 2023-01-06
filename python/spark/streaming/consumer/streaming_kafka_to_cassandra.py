@@ -3,14 +3,7 @@ from pyspark.sql.types import StructType,StructField,FloatType,IntegerType
 from pyspark.sql.functions import from_json,col
 
 odometrySchema = StructType([
-                StructField("id",IntegerType(),False),
-                StructField("posex",FloatType(),False),
-                StructField("posey",FloatType(),False),
-                StructField("posez",FloatType(),False),
-                StructField("orientx",FloatType(),False),
-                StructField("orienty",FloatType(),False),
-                StructField("orientz",FloatType(),False),
-                StructField("orientw",FloatType(),False)
+                StructField("id",IntegerType(),False)
             ])
 
 spark = SparkSession \

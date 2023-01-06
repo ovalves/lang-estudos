@@ -3,14 +3,7 @@ from pyspark.sql.types import StructType,StructField,LongType,IntegerType,FloatT
 from pyspark.sql.functions import split,from_json,col
 
 Schema = StructType([
-                StructField("id",IntegerType(),False),
-                StructField("posex",FloatType(),False),
-                StructField("posey",FloatType(),False),
-                StructField("posez",FloatType(),False),
-                StructField("orientx",FloatType(),False),
-                StructField("orienty",FloatType(),False),
-                StructField("orientz",FloatType(),False),
-                StructField("orientw",FloatType(),False)
+                StructField("id",IntegerType(),False)
             ])
 
 spark = SparkSession \
