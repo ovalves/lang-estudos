@@ -3,7 +3,40 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/ovalves/golang-estudos/blob/main/LICENSE)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-Este repositório contém estudos e exemplos sobre a linguagem de progração go.
+Este repositório contém estudos e exemplos sobre a linguagem go.
+
+### Tópicos
+* [Variables](variables/README.md)
+* [Types](types/README.md)
+* [Conditionals and Loops](conditionals_loops/README.md)
+* [Strings](strings/README.md)
+* [Numbers](numbers/README.md)
+* [Date and Time](date_time/README.md)
+* [Input](input/README.md)
+* **DS**
+  * [Map](ds/map/README.md)
+  * [Array](ds/array/README.md)
+  * [Slice](ds/slice/README.md)
+* **Functions**
+    * [Closure](functions/closure/README.md)
+    * [Defer](functions/defer/README.md)
+    * [Stack](functions/stack/stack.go)
+* **Structs**
+    * [Interface](structs/interface/README.md)
+* **Files**
+    * [Reading](files/README.md#read)
+    * [Write](files/README.md#write)
+    * [JSON](files/README.md#json)
+    * [YAML](files/README.md#yaml)
+    * [TOML](files/README.md#toml)
+* [CMD](cmd/README.md)
+* [regex](regex/README.md)
+* [Pointers](pointers/README.md)
+* [Concurrency](concurrency/README.md)
+* [Packages](packages/README.md)
+* [Builtin Packages](packages/builtin/README.md)
+* [Error Handling](error_handling/README.md)
+
 
 🚀 Introdução
 =================
@@ -11,69 +44,10 @@ Este repositório contém estudos e exemplos sobre a linguagem de progração go
 ### Resumindo
 > Go é uma linguagem de programação criada pela Google. É uma linguagem compilada e focada em produtividade e programação concorrente.
 
-# Instalando
-
-## Download
-
-Faça o download do instalador correspondente ao seu sistema operacional em  [http://golang.org/dl](http://golang.org/dl).
-
-### Microsoft Windows
-
-Apos executar o instalador, Go estará instalada em
-
-```
-C:\Go
-```
-
-**Lembre!** Você está instalando um compilador, desative qualquer software antivirus antes de compilar seus projetos. Muitos antivirus simplesmente bloqueiam o compilador silenciosamente, sem nenhum alerta e daí o compilador não vai conseguir gerar o executável dos exemplos.
-
----
-### Mac OS X
-
-Apos executar o instaldor, Go estará instalada em:
-
-```
-/usr/local/go
-```
-#### Mac OS X - Alternativa - Usando Homebrew
-Se você usa o Homebrew, o Go pode ser instalado com dois simples comandos:
-
-```
-brew update
-brew install go
-```
-
-Após isso o Go estará instalado em:
-```
-/usr/local/bin/go
-```
-
----
-### Linux
-
-Apos executar o instalador Go estará instalada no diretório:
-
-```
-/usr/local/go
-```
-
----
-### Mas eu não quero instalar nada!
-
-Se você não quiser fazer a instalação para testar os exemplos você pode usar o [The Go Playground](https://play.golang.org)
-
----
-
 # Workspace
 
-O workspace é o diretório incluido na variável de ambiente GOPATH, em alguns casos o GOPATH já
+O workspace é o diretório incluído na variável de ambiente GOPATH, em alguns casos o GOPATH já
 vem direcionado por padrão para o mesmo diretório da GOROOT, no caso o bin da linguagem.
-
-A linguagem de programação Go nos dá diretrizes sobre como organizar as pastas no **workspace**.
-
-O Workspace padrão do Go é um diretório chamado /go que fica na pasta do seu usuário em seu sistema operacional.
-No Windows esta pasta normalmente se encontra em C:/Users/seu-usuario/, e nos sistemas Unix (MacOS e distribuições do Linux)
-normalmente se encontra em /home/seu-usuario/.
 
 **bin** - Contém os arquivos compilados
 
@@ -91,38 +65,12 @@ Para que o ambiente de desenvolvimento funcione corretamente é necessário conf
 
 **GOPATH** - Deve apontar para seu diretório de trabalho.
 
-## Windows
-
-Instalando pelo MSI o sistema já deve fazer o ajuste no PATH, mas caso seja necessário alguma alteração basta ir no "Painel de Controle" -> "Sistema" -> "Avançado" -> Variáveis de ambiente.
-Em algumas versões do Windows você deve ir em "Configurações avançadas do sistema" ->  "Variáveis de ambiente".
-
-## Mac OS X e Linux
-
-No Mac, Linux e BSD você pode adicionar essas variáveis no arquivo de configuração do shell que você estiver usando como .profile no caso do bash ou .zshrc no caso do zsh.
-
-Exemplo:
-
-```bash
-export GOPATH=~/projeto
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-```
-
-**Obs:** Caso ainda não esteja você também precisa apontar o git na variavel PATH do seu sistema.
-
 ---
 ## Testando a instalação
-
 Depois de instalado e configurado você pode verificar se Go esta respondendo corretamente pelo comando
 
 ```bash
 go version
-```
-
-Para testar o git execute:
-
-```bash
-git --version
 ```
 
 ### Map
