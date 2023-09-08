@@ -30,6 +30,7 @@ Este repositório contém estudos e exemplos sobre a linguagem go.
 * [regex](regex/README.md)
 * [Pointers](pointers/README.md)
 * [Concurrency](concurrency/README.md)
+* [Net](net/README.md)
 * [Packages](packages/README.md)
 * [Builtin Packages](packages/builtin/README.md)
 * [Error Handling](error_handling/README.md)
